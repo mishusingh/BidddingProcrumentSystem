@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Config-Server/pom.xml" />
+        <option value="$PROJECT_DIR$/Discovery-Server/pom.xml" />
+        <option value="$PROJECT_DIR$/Procrument-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/Bidding-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/NotificationService/pom.xml" />
+        <option value="$PROJECT_DIR$/Gateway-Service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
