@@ -21,3 +21,55 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+
+    # 📈 Prometheus
+  prometheus:
+    image: prom/prometheus
+    volumes:
+        - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+        - "9090:9090"
+
+    # 📊 Grafana
+  grafana:
+      image: grafana/grafana
+      ports:
+        - "3000:3000"
+      volumes:
+        - grafana-storage:/var/lib/grafana
+      depends_on:
+        - prometheus
+
+    # 📦 Elasticsearch
+  elasticsearch:
+      image: docker.elastic.co/elasticsearch/elasticsearch:7.17.4
+      environment:
+        - discovery.type=single-node
+      ports:
+        - "9200:9200"
+
+    # 📬 Logstash
+  logstash:
+      image: docker.elastic.co/logstash/logstash:7.17.4
+      ports:
+        - "5000:5000"
+      volumes:
+        - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      depends_on:
+        - elasticsearch
+
+    # 📊 Kibana
+  kibana:
+      image: docker.elastic.co/kibana/kibana:7.17.4
+      ports:
+        - "5601:5601"
+      environment:
+        - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+
+volumes:
+  grafana-storage:
