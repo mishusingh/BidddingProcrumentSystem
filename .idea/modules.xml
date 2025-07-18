@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Bidding-Service/Bidding-Service.iml" filepath="$PROJECT_DIR$/Bidding-Service/Bidding-Service.iml" />
       <module fileurl="file://$PROJECT_DIR$/BiddingProcrumentSystem.iml" filepath="$PROJECT_DIR$/BiddingProcrumentSystem.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Config-Server/Config-Server.iml" filepath="$PROJECT_DIR$/Config-Server/Config-Server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Discovery-Server/Discovery-Server.iml" filepath="$PROJECT_DIR$/Discovery-Server/Discovery-Server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Gateway-Service/Gateway-Service.iml" filepath="$PROJECT_DIR$/Gateway-Service/Gateway-Service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/NotificationService/NotificationService.iml" filepath="$PROJECT_DIR$/NotificationService/NotificationService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Procrument-Service/Procrument-Service.iml" filepath="$PROJECT_DIR$/Procrument-Service/Procrument-Service.iml" />
     </modules>
   </component>
 </project>
